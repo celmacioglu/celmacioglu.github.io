@@ -38,7 +38,7 @@ const post = defineCollection({
 		}),
 });
 
-const note = defineCollection({
+const travel = defineCollection({
 	loader: glob({ base: "./content/notes", pattern: "**/*.{md,mdx}" }),
 	schema: baseSchema.extend({
 		description: z.string().optional(),
@@ -56,4 +56,4 @@ const tag = defineCollection({
 	}),
 });
 
-export const collections = { post, note, tag };
+export const collections = { post, travel, tag };
