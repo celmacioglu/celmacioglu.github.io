@@ -12,7 +12,7 @@ const baseSchema = z.object({
 	title: titleSchema,
 });
 
-const post = defineCollection({
+const travel = defineCollection({
 	loader: glob({ base: "./content/posts", pattern: "**/*.{md,mdx}" }),
 	schema: ({ image }) =>
 		baseSchema.extend({
@@ -38,7 +38,7 @@ const post = defineCollection({
 		}),
 });
 
-const travel = defineCollection({
+const note = defineCollection({
 	loader: glob({ base: "./content/notes", pattern: "**/*.{md,mdx}" }),
 	schema: baseSchema.extend({
 		description: z.string().optional(),
@@ -56,4 +56,4 @@ const tag = defineCollection({
 	}),
 });
 
-export const collections = { post, travel, tag };
+export const collections = { travel, note, tag };
